@@ -1,0 +1,32 @@
+# Generated IDE/compiler state
+Debug/
+Release/
+.metadata/
+*.launch.bak
+*.o
+*.d
+*.su
+*.cyclo
+__pycache__/
+.claude/
+node_modules/
+
+# Local CB_02 history and fixtures are retained on the development PC.
+/reference/
+/examples/
+/README_CB_02.md
+/CAN_COMMANDS.csv
+/HANDOFF_SHA256.txt
+/CognexMCU_Clone_Verification.json
+
+# Publish the build script and current firmware, excluding old review records.
+/review/*
+!/review/build.ps1
+!/review/build/
+/review/build/*
+!/review/build/CognexMCU.elf
+!/review/build/CognexMCU.bin
+!/review/build/CognexMCU.map
+
+/tests/test_sensor_serial
+/tests/test_sensor_serial.exe

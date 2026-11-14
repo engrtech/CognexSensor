@@ -1,0 +1,2 @@
+# Preserve source bytes and firmware hashes across Windows/Linux clones.
+* -text

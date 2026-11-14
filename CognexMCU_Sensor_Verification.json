@@ -1,0 +1,117 @@
+{
+  "project_setup_date": "2026-11-14",
+  "project": "C:\\STM32Projects\\CognexMCU",
+  "behavior": "Polled ON/OFF on state change; WARNING LED21 follows input; SENS? returns current ON/OFF; no startup output",
+  "input": "FuSa1 J20 pin 1, PA9, active HIGH, 0-3.3 V; J20 pin 3 ground",
+  "usb": "Native USB CDC on PA11/PA12; 8 MHz HSE and 48 MHz USB clock",
+  "arm_compile_and_link": "passed",
+  "sensor_sampling": "Nonblocking main-loop polling; no sensor EXTI enabled",
+  "warning_led": "PC5 -> R53 (330 ohms) -> orange WARNING LED21; HIGH = on, independent of USB connection",
+  "input_series_resistor": "R10 = 100 ohms; R31 = 10k pulldown on J20 side must be included in external divider loading",
+  "elf_interrupt_vectors": "OTG_FS points to strong USB handler; EXTI9_5 remains unused/default",
+  "project_configuration_checks": "passed",
+  "legacy_can_pwm_uart_code_in_linked_image": false,
+  "warnings": "Consult the build log; vendor support files may emit unused-parameter warnings",
+  "hardware_flashed": false,
+  "hardware_usb_enumeration_input_and_warning_led_test": "pending",
+  "software_protocol_runtime_tests": "See the native protocol/LED test step in the Firmware build workflow",
+  "source_files": [
+    {
+      "path": "Core\\Inc\\main.h",
+      "sha256": "1bdc1bf4724696f8332f61df1e417c483150e6139cc67c7cfc40d8afad344d7e"
+    },
+    {
+      "path": "Core\\Inc\\sensor_serial.h",
+      "sha256": "db0d37b0ee3ba1658e9f585ac8ec00d651d01eedfe388a0cb2fe0d1d34d3fd75"
+    },
+    {
+      "path": "Core\\Inc\\stm32f4xx_hal_conf.h",
+      "sha256": "82d03d0910181b7374a5069077587975e91e40bfe125351a13951c1006c389ba"
+    },
+    {
+      "path": "Core\\Inc\\stm32f4xx_it.h",
+      "sha256": "c0a1b8f9eef6ad097bbc370b9dd1e2a9e065126fdfa8c19a15d84af65b23b1e2"
+    },
+    {
+      "path": "Core\\Src\\main.c",
+      "sha256": "c7c7f066a3bb9a1a46e8d8d9897275f2851ee2c344250996ca834bb80c525e2d"
+    },
+    {
+      "path": "Core\\Src\\sensor_serial.c",
+      "sha256": "06c23a8447cb01d5129151350d3b272a83b02d4958b294aef3d17ea0ecf925c8"
+    },
+    {
+      "path": "Core\\Src\\stm32f4xx_hal_msp.c",
+      "sha256": "3217d99dc7006dc46ac384717641fe84386f05fc71db0a3340fa0eae810bc1b7"
+    },
+    {
+      "path": "Core\\Src\\stm32f4xx_it.c",
+      "sha256": "898c4e2fe00c76ec384a24758da25201f8b9da2a0f4f1a5169d87be42cff438b"
+    },
+    {
+      "path": "Core\\Src\\syscalls.c",
+      "sha256": "b993ebb4f882e8be21cec8d95983655a0caf4f0eb11348f20f6371f5a5031717"
+    },
+    {
+      "path": "Core\\Src\\sysmem.c",
+      "sha256": "c41145817cc20abd8881c38851745d6e509e5f8c44a5179b125d108e51d1d432"
+    },
+    {
+      "path": "Core\\Src\\system_stm32f4xx.c",
+      "sha256": "a31929eab936ac98db060c18917118acf79dc96e1f03ed4b57d614535dd06d70"
+    },
+    {
+      "path": "Core\\Startup\\startup_stm32f405rgtx.s",
+      "sha256": "c26c40ea8a4c27e4a7900e1d29bdfd6cdf6b46fbf4cbebad116a478803bbcb8e"
+    },
+    {
+      "path": "USB_DEVICE\\App\\usb_device.c",
+      "sha256": "4bf9062fc2a106eaa6bd2c68942da74051da9bb49eb2eced1b0a109ea7dae2af"
+    },
+    {
+      "path": "USB_DEVICE\\App\\usb_device.h",
+      "sha256": "5da12da5450c1e4344d68beb710e530da7d728c6e831a93442614446f84757b1"
+    },
+    {
+      "path": "USB_DEVICE\\App\\usbd_cdc_if.c",
+      "sha256": "d2fcf4dd72375eb35e79d4a676f2d0cf8a5712be268ab1ecff55c4ef0d1b339b"
+    },
+    {
+      "path": "USB_DEVICE\\App\\usbd_cdc_if.h",
+      "sha256": "664e44912621ec1b9a2d602cda9ad5dd8c347da3c6efdcf10a5c9ba1674b8d39"
+    },
+    {
+      "path": "USB_DEVICE\\App\\usbd_desc.c",
+      "sha256": "38fb063727f8a96f897a1af49155e0c879414535e828c224993bd6868f870ff5"
+    },
+    {
+      "path": "USB_DEVICE\\App\\usbd_desc.h",
+      "sha256": "a4fbe168f224d3e2d8091b90df1115301247e1a6e16177bab101ca81aa70172d"
+    },
+    {
+      "path": "USB_DEVICE\\Target\\usbd_conf.c",
+      "sha256": "848bb68b1cacea5397b13222b3fec27700c1d3f28a1ea193dde81b003b562b47"
+    },
+    {
+      "path": "USB_DEVICE\\Target\\usbd_conf.h",
+      "sha256": "99dcff1bcbf4fbda59073bbc32ec34c61fbf7cbc0456c4f42b568078dee56fdf"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "review\\build\\CognexMCU.elf",
+      "bytes": 1102100,
+      "sha256": "453ec7d7d288dfd18d97d9020ebb078a73f1c97c73daa34a8d89c7852274111a"
+    },
+    {
+      "path": "review\\build\\CognexMCU.bin",
+      "bytes": 30076,
+      "sha256": "0a7b2dfa27f15400e95628d32c1b9d2ea8649ad833a2d9c6f41cf1eb57aeba67"
+    },
+    {
+      "path": "review\\build\\CognexMCU.map",
+      "bytes": 435001,
+      "sha256": "4c6276f27a83a9acf3bafd4d848d67ba8c894afeeeda438a2f6cd784da8d9e8a"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+name: Firmware build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: Test polling, LED, and serial behavior
+        run: |
+          gcc -std=c11 -Wall -Wextra -Werror -Itests/stubs -ICore/Inc Core/Src/sensor_serial.c tests/test_sensor_serial.c -o /tmp/test_sensor_serial
+          /tmp/test_sensor_serial
+      - name: Install ARM toolchain
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends gcc-arm-none-eabi binutils-arm-none-eabi libnewlib-arm-none-eabi
+      - name: Build firmware
+        shell: pwsh
+        run: ./review/build.ps1
+      - name: Verify firmware configuration and vectors
+        run: python3 tools/verify_firmware.py
+      - name: Upload firmware
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: CognexMCU-firmware
+          path: |
+            review/build/CognexMCU.elf
+            review/build/CognexMCU.bin
+            review/build/CognexMCU.map
+            CognexMCU_Sensor_Verification.json
+          if-no-files-found: error
+          retention-days: 30
