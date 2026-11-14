@@ -41,6 +41,8 @@ USB uses **PA11/PA12**. CAN, PWM, motor control, and the old provisioning UART a
 
 ## PTEM bench use
 
+See [PTEM/README.md](PTEM/README.md) for the saved sensor-trigger test plan and [DataMan serial commands](PTEM/DataMan_Serial_Commands.md) for the reader command reference.
+
 1. Program the new firmware yourself, then connect the module's USB port. No device was programmed as part of creating these files.
 2. Select its COM port in PTEM. Windows should identify the product as **CognexMCU Sensor**. COM numbering is assigned by Windows.
 3. Use normal serial settings such as 115200, 8-N-1, no flow control. USB CDC does not use the baud setting as a physical UART clock. DTR/RTS are not required by this firmware.

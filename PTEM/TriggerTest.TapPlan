@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TestPlan type="emb:OpenTap.TestPlan">
+  <Steps>
+    <TestStep type="emb:Keysight.OpenTap.Plugins.Extensions.TapSteps.Main" Id="708e679f-a388-48a9-88dc-5a8cdd07d3f7">
+      <OnError>Execute Clean Up</OnError>
+      <EnableLogging>true</EnableLogging>
+      <LogTemplate />
+      <Name Metadata="Step Name">Main</Name>
+      <ChildTestSteps />
+      <Ptem.Step.MemberProperties.MemberProperties />
+      <Ptem.MultiUutLock.Enabled>false</Ptem.MultiUutLock.Enabled>
+      <Ptem.ErrorHandlingMixin.ReportError>
+        <Value>Inconclusive, Fail, Aborted, Error</Value>
+        <IsEnabled>false</IsEnabled>
+      </Ptem.ErrorHandlingMixin.ReportError>
+      <Ptem.ErrorHandlingMixin.ErrorCode />
+    </TestStep>
+    <TestStep type="emb:Keysight.OpenTap.Plugins.Extensions.TapSteps.GetDataFromSerialPort" Id="b6ba63d6-8bcc-4d47-a90b-ea68adce77b6">
+      <OpenTap.Mixins>
+        <Variable_StringData type="Keysight.OpenTap.Plugins.Extensions.Variables.Mixins.VariableMixinBuilder">
+          <Member>StringData</Member>
+        </Variable_StringData>
+      </OpenTap.Mixins>
+      <SerialPortInst type="ptemsaveid:Keysight.OpenTap.Plugins.Extensions.Instruments.SerialPortInst" Name="Serial Port" Source="OpenTap.InstrumentSettings">Serial Port</SerialPortInst>
+      <IsTimeOutEnabled>true</IsTimeOutEnabled>
+      <TimeOut>10000</TimeOut>
+      <RemoveNullCharacters>true</RemoveNullCharacters>
+      <TrimLeadingWhitespaces>true</TrimLeadingWhitespaces>
+      <TrimTrailingWhitespaces>true</TrimTrailingWhitespaces>
+      <DataTypeSelected>StringType</DataTypeSelected>
+      <StringData>ON</StringData>
+      <ByteArrayData />
+      <Name Metadata="Step Name">Serial Read Data</Name>
+      <ChildTestSteps />
+      <Ptem.Step.MemberProperties.MemberProperties />
+      <Ptem.MultiUutLock.Enabled>false</Ptem.MultiUutLock.Enabled>
+      <Ptem.ErrorHandlingMixin.ReportError>
+        <Value>Inconclusive, Fail, Aborted, Error</Value>
+        <IsEnabled>false</IsEnabled>
+      </Ptem.ErrorHandlingMixin.ReportError>
+      <Ptem.ErrorHandlingMixin.ErrorCode />
+      <Variable_StringData.IsEditable>true</Variable_StringData.IsEditable>
+      <Variable_StringData.CachedVarSource />
+      <Variable_StringData.VariableName>DUT_IN</Variable_StringData.VariableName>
+      <Variable_StringData.UUTStates />
+    </TestStep>
+    <TestStep type="emb:Keysight.OpenTap.Plugins.Extensions.TapSteps.CustomIFElse" Id="ee78cd8e-3f64-4b98-a89c-3dac79c2fefc" OpenTap.Visibility="Visible">
+      <Action>UntilVariable</Action>
+      <ThenStepName>Trigger</ThenStepName>
+      <ElseStepName>No Board</ElseStepName>
+      <ParameterTypes>String</ParameterTypes>
+      <InputString>DUT_IN</InputString>
+      <StringBoolCharConditions>EqualsTo</StringBoolCharConditions>
+      <IntDoubleByteConditions>EqualsTo</IntDoubleByteConditions>
+      <AssignVaribaleFrom>GlobalVariable</AssignVaribaleFrom>
+      <TargetIntDoubleByteStringChar>ON</TargetIntDoubleByteStringChar>
+      <TargetGlobalVaribaleName>BOARD_PRESENT</TargetGlobalVaribaleName>
+      <TargetBool>False</TargetBool>
+      <InputStringTimer />
+      <Name Metadata="Step Name">If Else</Name>
+      <ChildTestSteps>
+        <TestStep type="emb:Keysight.OpenTap.Plugins.Extensions.TapSteps.Advance_Steps.PrintStep" Id="66b1ef5f-6304-4c4a-9e22-37afd538de1a">
+          <Message>Trigger!</Message>
+          <Name Metadata="Step Name">Trigger</Name>
+          <ChildTestSteps />
+          <Ptem.Step.MemberProperties.MemberProperties />
+          <Ptem.MultiUutLock.Enabled>false</Ptem.MultiUutLock.Enabled>
+          <Ptem.ErrorHandlingMixin.ReportError>
+            <Value>Inconclusive, Fail, Aborted, Error</Value>
+            <IsEnabled>false</IsEnabled>
+          </Ptem.ErrorHandlingMixin.ReportError>
+          <Ptem.ErrorHandlingMixin.ErrorCode />
+        </TestStep>
+        <TestStep type="emb:Keysight.OpenTap.Plugins.Extensions.TapSteps.Advance_Steps.PrintStep" Id="c5bdd21d-a2a5-4e2f-bafb-45eaea6ef0e1">
+          <Message>No Board Yet</Message>
+          <Name Metadata="Step Name">No Board</Name>
+          <ChildTestSteps />
+          <Ptem.Step.MemberProperties.MemberProperties />
+          <Ptem.MultiUutLock.Enabled>false</Ptem.MultiUutLock.Enabled>
+          <Ptem.ErrorHandlingMixin.ReportError>
+            <Value>Inconclusive, Fail, Aborted, Error</Value>
+            <IsEnabled>false</IsEnabled>
+          </Ptem.ErrorHandlingMixin.ReportError>
+          <Ptem.ErrorHandlingMixin.ErrorCode />
+        </TestStep>
+      </ChildTestSteps>
+      <Ptem.Step.MemberProperties.MemberProperties />
+      <Ptem.MultiUutLock.Enabled>false</Ptem.MultiUutLock.Enabled>
+      <Ptem.ErrorHandlingMixin.ReportError>
+        <Value>Inconclusive, Fail, Aborted, Error</Value>
+        <IsEnabled>false</IsEnabled>
+      </Ptem.ErrorHandlingMixin.ReportError>
+      <Ptem.ErrorHandlingMixin.ErrorCode />
+    </TestStep>
+    <TestStep type="emb:Keysight.OpenTap.Plugins.Extensions.TapSteps.CleanUp" Id="61002adb-9a50-4814-b794-52debc7a9c72">
+      <EnableLogging>true</EnableLogging>
+      <LogTemplate />
+      <Name Metadata="Step Name">Clean Up</Name>
+      <ChildTestSteps />
+      <Ptem.Step.MemberProperties.MemberProperties />
+      <Ptem.MultiUutLock.Enabled>false</Ptem.MultiUutLock.Enabled>
+      <Ptem.ErrorHandlingMixin.ReportError>
+        <Value>Inconclusive, Fail, Aborted, Error</Value>
+        <IsEnabled>false</IsEnabled>
+      </Ptem.ErrorHandlingMixin.ReportError>
+      <Ptem.ErrorHandlingMixin.ErrorCode />
+    </TestStep>
+  </Steps>
+  <Ptem.SwitchManagerDeserializeMarker></Ptem.SwitchManagerDeserializeMarker>
+  <PTEMTestPlanUISettingsMember>
+    <WatchOrder />
+    <EditorSettings>
+      <SettingString>
+        <Base64>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxFZGl0b3JTZXR0aW5ncyB0eXBlPSJLZXlzaWdodC5PcGVuVGFwLldwZi5FZGl0b3JTZXR0aW5ncyI+DQogIDxTaG93V2VsY29tZVNjcmVlbj50cnVlPC9TaG93V2VsY29tZVNjcmVlbj4NCiAgPENoZWNrRm9yVXBkYXRlcz5mYWxzZTwvQ2hlY2tGb3JVcGRhdGVzPg0KICA8TG9nVmlzaWJpbGl0eT5WaWV3RXJyb3JzLCBWaWV3V2FybmluZ3MsIFZpZXdNZXNzYWdlczwvTG9nVmlzaWJpbGl0eT4NCiAgPENvbG9yVGhlbWU+T3NUaGVtZTwvQ29sb3JUaGVtZT4NCiAgPFJlc3VsdFBvcHVwPmZhbHNlPC9SZXN1bHRQb3B1cD4NCiAgPENsZWFyTG9nPnRydWU8L0NsZWFyTG9nPg0KICA8U2hvd1F1aXRDb25maXJtYXRpb24+dHJ1ZTwvU2hvd1F1aXRDb25maXJtYXRpb24+DQogIDxTaG93U2F2ZUJlZm9yZUV4aXQ+dHJ1ZTwvU2hvd1NhdmVCZWZvcmVFeGl0Pg0KICA8U2hvd0d1aUxvZz50cnVlPC9TaG93R3VpTG9nPg0KICA8RW5zdXJlVW5pcXVlU3RlcE5hbWU+dHJ1ZTwvRW5zdXJlVW5pcXVlU3RlcE5hbWU+DQogIDxLZWVwUGFuZWxzSW5Gcm9udD50cnVlPC9LZWVwUGFuZWxzSW5Gcm9udD4NCiAgPFNob3dSb3dOdW1iZXJzPnRydWU8L1Nob3dSb3dOdW1iZXJzPg0KICA8U2hvd0Jyb2tlblBhY2thZ2VzV2luZG93PnRydWU8L1Nob3dCcm9rZW5QYWNrYWdlc1dpbmRvdz4NCiAgPEVzdGltYXRpb25XaW5kb3dMZW5ndGg+MTA8L0VzdGltYXRpb25XaW5kb3dMZW5ndGg+DQogIDxMb2dQYW5lbEJ1ZmZlclNpemU+MjAwMDA8L0xvZ1BhbmVsQnVmZmVyU2l6ZT4NCiAgPFNob3dDb2RlTGlua3NJbkxvZz5mYWxzZTwvU2hvd0NvZGVMaW5rc0luTG9nPg0KICA8U2hvd1Byb3BlcnR5SW5Ub29sdGlwPmZhbHNlPC9TaG93UHJvcGVydHlJblRvb2x0aXA+DQogIDxBdXRvQXR0YWNoRGVidWdnZXI+ZmFsc2U8L0F1dG9BdHRhY2hEZWJ1Z2dlcj4NCiAgPEFsbG93RWRpdGluZ1doaWxlUGF1c2VkPmZhbHNlPC9BbGxvd0VkaXRpbmdXaGlsZVBhdXNlZD4NCiAgPEZvY3VzTW9kZT5mYWxzZTwvRm9jdXNNb2RlPg0KICA8Rm9jdXNNb2RlRG9udEFza01lQWdhaW4+ZmFsc2U8L0ZvY3VzTW9kZURvbnRBc2tNZUFnYWluPg0KICA8UGFja2FnZS5EZXBlbmRlbmNpZXM+DQogICAgPFBhY2thZ2UgTmFtZT0iV1BGIENvbnRyb2xzIiBWZXJzaW9uPSJeOS4zNC4wK2U5YTU1NWNmIiAvPg0KICAgIDxQYWNrYWdlIE5hbWU9Ik9wZW5UQVAiIFZlcnNpb249Il45LjM0LjArZjQ5OGQzYjYiIC8+DQogICAgPFBhY2thZ2UgTmFtZT0iRWRpdG9yIiBWZXJzaW9uPSJeOS4zNC4wK2U5YTU1NWNmIiAvPg0KICA8L1BhY2thZ2UuRGVwZW5kZW5jaWVzPg0KPC9FZGl0b3JTZXR0aW5ncz4=</Base64>
+      </SettingString>
+    </EditorSettings>
+    <GuiControlsSettings>
+      <SettingString>
+        <Base64>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxHdWlDb250cm9sc1NldHRpbmdzIHR5cGU9IktleXNpZ2h0Lk9wZW5UYXAuV3BmLkd1aUNvbnRyb2xzU2V0dGluZ3MiPg0KICA8RXhwYW5kZWRTdGVwQ2F0ZWdvcmllcz4NCiAgICA8U3RyaW5nPkluc3RydW1lbnRzPC9TdHJpbmc+DQogICAgPFN0cmluZz5QVEVNIEZsYXNoUnVubmVyPC9TdHJpbmc+DQogICAgPFN0cmluZz5LdmFzZXI8L1N0cmluZz4NCiAgICA8U3RyaW5nPk1lcml0IFNlbnNvcjwvU3RyaW5nPg0KICAgIDxTdHJpbmc+S3Zhc2VyTWFudWFsPC9TdHJpbmc+DQogICAgPFN0cmluZz5MaW1pdCBDaGVjazwvU3RyaW5nPg0KICAgIDxTdHJpbmc+TWF0aGVtYXRpY3MgJmFtcDsgQ29udmVyc2lvbjwvU3RyaW5nPg0KICAgIDxTdHJpbmc+U3RyaW5nIE9wZXJhdGlvbnM8L1N0cmluZz4NCiAgICA8U3RyaW5nPlN3aXRjaCBNYW5hZ2VyPC9TdHJpbmc+DQogICAgPFN0cmluZz5UZXN0IE9wZXJhdGlvbnM8L1N0cmluZz4NCiAgICA8U3RyaW5nPlRlc3QgUGxhbnM8L1N0cmluZz4NCiAgICA8U3RyaW5nPkZsYXNoUnVubmVyTWFudWFsPC9TdHJpbmc+DQogICAgPFN0cmluZz5QVEVNU2NvcGU8L1N0cmluZz4NCiAgICA8U3RyaW5nPlBURU1GbGFzaFJ1bm5lcjwvU3RyaW5nPg0KICAgIDxTdHJpbmc+RGF0YWJhc2U8L1N0cmluZz4NCiAgICA8U3RyaW5nPlRleHQ8L1N0cmluZz4NCiAgICA8U3RyaW5nPlNlcmlhbCBQb3J0PC9TdHJpbmc+DQogICAgPFN0cmluZz5GbG93IENvbnRyb2w8L1N0cmluZz4NCiAgICA8U3RyaW5nPkFzc2lnbm1lbnQ8L1N0cmluZz4NCiAgICA8U3RyaW5nPkFQMTIwMEEvQVAwMjAwQTwvU3RyaW5nPg0KICAgIDxTdHJpbmc+QXJyYXk8L1N0cmluZz4NCiAgPC9FeHBhbmRlZFN0ZXBDYXRlZ29yaWVzPg0KICA8UHJvcEdyaWRDYXRlZ29yaWVzPg0KICAgIDxTdHJpbmc+T3BlblRhcC5UeXBlRGF0YVZlcmRpY3QgSGFuZGxpbmc8L1N0cmluZz4NCiAgICA8U3RyaW5nPk9wZW5UYXAuVHlwZURhdGFDb21tb248L1N0cmluZz4NCiAgICA8U3RyaW5nPk9wZW5UYXAuRW1iZWRkZWRUeXBlRGF0YUxpbWl0IGZvciBWZXJkaWN0IENvbmRpdGlvbiBbT3BlblRhcC5FbmFibGVkYDFbS2V5c2lnaHQuT3BlblRhcC5QbHVnaW5zLkV4dGVuc2lvbnMuVGVzdFN0ZXBFcnJvckhhbmRsaW5nLlRlc3RTdGVwRXJyb3JIYW5kbGluZ01peGluK0Vycm9yVmVyZGljdEZsYWdzXV08L1N0cmluZz4NCiAgICA8U3RyaW5nPk9wZW5UYXAuVHlwZURhdGFWSVNBPC9TdHJpbmc+DQogICAgPFN0cmluZz5PcGVuVGFwLlR5cGVEYXRhRGVidWc8L1N0cmluZz4NCiAgICA8U3RyaW5nPk9wZW5UYXAuVHlwZURhdGFMb2NraW5nPC9TdHJpbmc+DQogICAgPFN0cmluZz5PcGVuVGFwLlR5cGVEYXRhRGF0YSAoVXNlciBWYXJpYWJsZSk8L1N0cmluZz4NCiAgICA8U3RyaW5nPk9wZW5UYXAuVHlwZURhdGFWZXJkaWN0IENvbmRpdGlvbiAoVXNlciBWYXJpYWJsZSk8L1N0cmluZz4NCiAgICA8U3RyaW5nPk9wZW5UYXAuRW1iZWRkZWRUeXBlRGF0YURldmljZUlEPC9TdHJpbmc+DQogICAgPFN0cmluZz5PcGVuVGFwLlR5cGVEYXRhUFRFTSBWYXJpYWJsZSBOYW1lczwvU3RyaW5nPg0KICAgIDxTdHJpbmc+T3BlblRhcC5FbWJlZGRlZFR5cGVEYXRhVmFsdWU8L1N0cmluZz4NCiAgPC9Qcm9wR3JpZENhdGVnb3JpZXM+DQogIDxQcm9wR3JpZENhdGVnb3J5U3RhdGVzPg0KICAgIDxCb29sZWFuPnRydWU8L0Jvb2xlYW4+DQogICAgPEJvb2xlYW4+dHJ1ZTwvQm9vbGVhbj4NCiAgICA8Qm9vbGVhbj50cnVlPC9Cb29sZWFuPg0KICAgIDxCb29sZWFuPnRydWU8L0Jvb2xlYW4+DQogICAgPEJvb2xlYW4+dHJ1ZTwvQm9vbGVhbj4NCiAgICA8Qm9vbGVhbj50cnVlPC9Cb29sZWFuPg0KICAgIDxCb29sZWFuPnRydWU8L0Jvb2xlYW4+DQogICAgPEJvb2xlYW4+dHJ1ZTwvQm9vbGVhbj4NCiAgICA8Qm9vbGVhbj50cnVlPC9Cb29sZWFuPg0KICAgIDxCb29sZWFuPnRydWU8L0Jvb2xlYW4+DQogICAgPEJvb2xlYW4+dHJ1ZTwvQm9vbGVhbj4NCiAgPC9Qcm9wR3JpZENhdGVnb3J5U3RhdGVzPg0KICA8TWFpbldpbmRvd0hlaWdodD4xMzkyPC9NYWluV2luZG93SGVpZ2h0Pg0KICA8TWFpbldpbmRvd1dpZHRoPjEyODA8L01haW5XaW5kb3dXaWR0aD4NCiAgPE1haW5XaW5kb3dUb3A+MDwvTWFpbldpbmRvd1RvcD4NCiAgPE1haW5XaW5kb3dMZWZ0PjEyODA8L01haW5XaW5kb3dMZWZ0Pg0KICA8TWFpbldpbmRvd1N0YXRlPk5vcm1hbDwvTWFpbldpbmRvd1N0YXRlPg0KICA8UmVjZW50VGVzdFBsYW5zPg0KICAgIDxTdHJpbmc+QzpcVXNlcnNcdnZhbGFcRG9jdW1lbnRzXEtTXENvZ25leFxUcmlnZ2VyVGVzdC5UYXBQbGFuPC9TdHJpbmc+DQogICAgPFN0cmluZz5DOlxVc2Vyc1x2dmFsYVxEb2N1bWVudHNcS1NcQ29nbmV4XENvZ25leFN0YW5kLlRhcFBsYW48L1N0cmluZz4NCiAgICA8U3RyaW5nPkM6XFVzZXJzXHZ2YWxhXERvY3VtZW50c1xQVEVNXE1peGluXFJlYWRpbmdDU1YuVGFwUGxhbjwvU3RyaW5nPg0KICAgIDxTdHJpbmc+QzpcVXNlcnNcdnZhbGFcRG9jdW1lbnRzXFBURU1cTWl4aW5cTWl4aW4uVGFwUGxhbjwvU3RyaW5nPg0KICAgIDxTdHJpbmc+QzpcVXNlcnNcdnZhbGFcRGVza3RvcFxEZW1vXERlbW9fMDFfU05TZXBhcmF0ZS5UYXBQbGFuPC9TdHJpbmc+DQogIDwvUmVjZW50VGVzdFBsYW5zPg0KICA8VGVzdFBsYW5HcmlkQ29sdW1uRGV0YWlscz48L1Rlc3RQbGFuR3JpZENvbHVtbkRldGFpbHM+DQogIDxUZXN0UGxhbkNvbHVtblN0YXRlIC8+DQogIDxUZXN0UGxhbkNvbHVtblN0YXRlMj4NCiAgICA8Q29sdW1uU3RhdGUgdHlwZT0iS2V5c2lnaHQuT3BlblRhcC5HdWkuQ29sdW1uU3RhdGUiPg0KICAgICAgPE5hbWU+RHVyYXRpb248L05hbWU+DQogICAgICA8SXNWaXNpYmxlPnRydWU8L0lzVmlzaWJsZT4NCiAgICAgIDxQcmlvcml0eT4wLjAwMTwvUHJpb3JpdHk+DQogICAgICA8T3JpZ2luYWxQcmlvcml0eT4wPC9PcmlnaW5hbFByaW9yaXR5Pg0KICAgICAgPFdpZHRoIC8+DQogICAgICA8TWFudWFsbHlDb25maWd1cmVkPnRydWU8L01hbnVhbGx5Q29uZmlndXJlZD4NCiAgICA8L0NvbHVtblN0YXRlPg0KICAgIDxDb2x1bW5TdGF0ZSB0eXBlPSJLZXlzaWdodC5PcGVuVGFwLkd1aS5Db2x1bW5TdGF0ZSI+DQogICAgICA8TmFtZT5GbG93PC9OYW1lPg0KICAgICAgPElzVmlzaWJsZT50cnVlPC9Jc1Zpc2libGU+DQogICAgICA8UHJpb3JpdHk+MC4wMTwvUHJpb3JpdHk+DQogICAgICA8T3JpZ2luYWxQcmlvcml0eT4wLjAxPC9PcmlnaW5hbFByaW9yaXR5Pg0KICAgICAgPFdpZHRoIC8+DQogICAgICA8TWFudWFsbHlDb25maWd1cmVkPnRydWU8L01hbnVhbGx5Q29uZmlndXJlZD4NCiAgICA8L0NvbHVtblN0YXRlPg0KICAgIDxDb2x1bW5TdGF0ZSB0eXBlPSJLZXlzaWdodC5PcGVuVGFwLkd1aS5Db2x1bW5TdGF0ZSI+DQogICAgICA8TmFtZT5WZXJkaWN0PC9OYW1lPg0KICAgICAgPElzVmlzaWJsZT50cnVlPC9Jc1Zpc2libGU+DQogICAgICA8UHJpb3JpdHk+LTk5PC9Qcmlvcml0eT4NCiAgICAgIDxPcmlnaW5hbFByaW9yaXR5Pi05OTwvT3JpZ2luYWxQcmlvcml0eT4NCiAgICAgIDxXaWR0aCAvPg0KICAgICAgPE1hbnVhbGx5Q29uZmlndXJlZD50cnVlPC9NYW51YWxseUNvbmZpZ3VyZWQ+DQogICAgPC9Db2x1bW5TdGF0ZT4NCiAgICA8Q29sdW1uU3RhdGUgdHlwZT0iS2V5c2lnaHQuT3BlblRhcC5HdWkuQ29sdW1uU3RhdGUiPg0KICAgICAgPE5hbWU+PC9OYW1lPg0KICAgICAgPElzVmlzaWJsZT50cnVlPC9Jc1Zpc2libGU+DQogICAgICA8UHJpb3JpdHk+LTEwMTwvUHJpb3JpdHk+DQogICAgICA8T3JpZ2luYWxQcmlvcml0eT4tMTAxPC9PcmlnaW5hbFByaW9yaXR5Pg0KICAgICAgPFdpZHRoIC8+DQogICAgICA8TWFudWFsbHlDb25maWd1cmVkPnRydWU8L01hbnVhbGx5Q29uZmlndXJlZD4NCiAgICA8L0NvbHVtblN0YXRlPg0KICAgIDxDb2x1bW5TdGF0ZSB0eXBlPSJLZXlzaWdodC5PcGVuVGFwLkd1aS5Db2x1bW5TdGF0ZSI+DQogICAgICA8TmFtZT5OYW1lPC9OYW1lPg0KICAgICAgPElzVmlzaWJsZT50cnVlPC9Jc1Zpc2libGU+DQogICAgICA8UHJpb3JpdHk+LTEwMDwvUHJpb3JpdHk+DQogICAgICA8T3JpZ2luYWxQcmlvcml0eT4tMTAwPC9PcmlnaW5hbFByaW9yaXR5Pg0KICAgICAgPFdpZHRoIC8+DQogICAgICA8TWFudWFsbHlDb25maWd1cmVkPnRydWU8L01hbnVhbGx5Q29uZmlndXJlZD4NCiAgICA8L0NvbHVtblN0YXRlPg0KICAgIDxDb2x1bW5TdGF0ZSB0eXBlPSJLZXlzaWdodC5PcGVuVGFwLkd1aS5Db2x1bW5TdGF0ZSI+DQogICAgICA8TmFtZT5UeXBlPC9OYW1lPg0KICAgICAgPElzVmlzaWJsZT50cnVlPC9Jc1Zpc2libGU+DQogICAgICA8UHJpb3JpdHk+MTwvUHJpb3JpdHk+DQogICAgICA8T3JpZ2luYWxQcmlvcml0eT4xPC9PcmlnaW5hbFByaW9yaXR5Pg0KICAgICAgPFdpZHRoIC8+DQogICAgICA8TWFudWFsbHlDb25maWd1cmVkPnRydWU8L01hbnVhbGx5Q29uZmlndXJlZD4NCiAgICA8L0NvbHVtblN0YXRlPg0KICAgIDxDb2x1bW5TdGF0ZSB0eXBlPSJLZXlzaWdodC5PcGVuVGFwLkd1aS5Db2x1bW5TdGF0ZSI+DQogICAgICA8TmFtZT5EVVQgQ2hlY2twb2ludDwvTmFtZT4NCiAgICAgIDxJc1Zpc2libGU+dHJ1ZTwvSXNWaXNpYmxlPg0KICAgICAgPFByaW9yaXR5PjA8L1ByaW9yaXR5Pg0KICAgICAgPE9yaWdpbmFsUHJpb3JpdHk+MDwvT3JpZ2luYWxQcmlvcml0eT4NCiAgICAgIDxXaWR0aCB0eXBlPSJTeXN0ZW0uSW50MzIiPjEyNjwvV2lkdGg+DQogICAgICA8TWFudWFsbHlDb25maWd1cmVkPmZhbHNlPC9NYW51YWxseUNvbmZpZ3VyZWQ+DQogICAgPC9Db2x1bW5TdGF0ZT4NCiAgICA8Q29sdW1uU3RhdGUgdHlwZT0iS2V5c2lnaHQuT3BlblRhcC5HdWkuQ29sdW1uU3RhdGUiPg0KICAgICAgPE5hbWU+UmVjZWl2ZWQgRGF0YSAoMHgpIChVc2VyIFZhcmlhYmxlKSBcIFJlY2VpdmVkRGF0YSBcIFZhcmlhYmxlIE5hbWU8L05hbWU+DQogICAgICA8SXNWaXNpYmxlPnRydWU8L0lzVmlzaWJsZT4NCiAgICAgIDxQcmlvcml0eT4wPC9Qcmlvcml0eT4NCiAgICAgIDxPcmlnaW5hbFByaW9yaXR5PjA8L09yaWdpbmFsUHJpb3JpdHk+DQogICAgICA8V2lkdGggLz4NCiAgICAgIDxNYW51YWxseUNvbmZpZ3VyZWQ+dHJ1ZTwvTWFudWFsbHlDb25maWd1cmVkPg0KICAgIDwvQ29sdW1uU3RhdGU+DQogIDwvVGVzdFBsYW5Db2x1bW5TdGF0ZTI+DQogIDxFeHRlcm5hbFBhcmFtZXRlcnNXaW5kb3dTaXplIC8+DQogIDxNdWx0aXBsZUNob2ljZVdpbmRvd1NpemUgLz4NCiAgPFBsdWdpbk1hbmFnZXJXaW5kb3dTaXplIC8+DQogIDxTd2VlcFZhbHVlc1dpbmRvd1NpemUgLz4NCiAgPEh1YldpbmRvd1NpemUgLz4NCiAgPFVzZXJJbnB1dFNpemUgLz4NCiAgPFVzZXJJbnB1dFNpemVzPg0KICAgIDxLZXlWYWx1ZVBhaXJPZlN0cmluZz4NCiAgICAgIDxLZXk+S2V5c2lnaHQuT3BlblRhcC5XcGYuQ29tbXVuaXR5TGljZW5zZStFcnJvclVzZXJJbnB1dDwvS2V5Pg0KICAgICAgPFZhbHVlPg0KICAgICAgICA8V2lkdGg+NjU3LjMzMzMzMzMzMzMzMzQ8L1dpZHRoPg0KICAgICAgICA8SGVpZ2h0PjE5MDwvSGVpZ2h0Pg0KICAgICAgPC9WYWx1ZT4NCiAgICA8L0tleVZhbHVlUGFpck9mU3RyaW5nPg0KICAgIDxLZXlWYWx1ZVBhaXJPZlN0cmluZz4NCiAgICAgIDxLZXk+S2V5c2lnaHQuT3BlblRhcC5HdWkuUGxhbkxvYWRlZFdpdGhFcnJvcnNRdWVzdGlvbjwvS2V5Pg0KICAgICAgPFZhbHVlPg0KICAgICAgICA8V2lkdGg+Mzk1LjMzMzMzMzMzMzMzMzM8L1dpZHRoPg0KICAgICAgICA8SGVpZ2h0PjE4MDwvSGVpZ2h0Pg0KICAgICAgPC9WYWx1ZT4NCiAgICA8L0tleVZhbHVlUGFpck9mU3RyaW5nPg0KICAgIDxLZXlWYWx1ZVBhaXJPZlN0cmluZz4NCiAgICAgIDxLZXk+S2V5c2lnaHQuT3BlblRhcC5XcGYuUXVpY2tEaWFsb2crU2hvd01lc3NhZ2VSZXF1ZXN0PC9LZXk+DQogICAgICA8VmFsdWU+DQogICAgICAgIDxXaWR0aD40MTcuMzMzMzMzMzMzMzMzMzwvV2lkdGg+DQogICAgICAgIDxIZWlnaHQ+MTgwPC9IZWlnaHQ+DQogICAgICA8L1ZhbHVlPg0KICAgIDwvS2V5VmFsdWVQYWlyT2ZTdHJpbmc+DQogICAgPEtleVZhbHVlUGFpck9mU3RyaW5nPg0KICAgICAgPEtleT5NaXhpbjwvS2V5Pg0KICAgICAgPFZhbHVlPg0KICAgICAgICA8V2lkdGg+MzYwPC9XaWR0aD4NCiAgICAgICAgPEhlaWdodD4yNTUuMzMzMzMzMzMzMzMzMzQ8L0hlaWdodD4NCiAgICAgIDwvVmFsdWU+DQogICAgPC9LZXlWYWx1ZVBhaXJPZlN0cmluZz4NCiAgICA8S2V5VmFsdWVQYWlyT2ZTdHJpbmc+DQogICAgICA8S2V5Pk9wZW5UYXAuUGFyYW1ldGVyTWFuYWdlcitOYW1pbmdRdWVzdGlvbjwvS2V5Pg0KICAgICAgPFZhbHVlPg0KICAgICAgICA8V2lkdGg+MzYwPC9XaWR0aD4NCiAgICAgICAgPEhlaWdodD4yMDQ8L0hlaWdodD4NCiAgICAgIDwvVmFsdWU+DQogICAgPC9LZXlWYWx1ZVBhaXJPZlN0cmluZz4NCiAgPC9Vc2VySW5wdXRTaXplcz4NCiAgPE5ld1N0ZXBEaWFsb2dXaW5kb3dTaXplPg0KICAgIDxXaWR0aD40NTAuNjY2NjY2NjY2NjY2NzwvV2lkdGg+DQogICAgPEhlaWdodD41MDA8L0hlaWdodD4NCiAgPC9OZXdTdGVwRGlhbG9nV2luZG93U2l6ZT4NCiAgPFNldHRpbmdEaWFsb2dXaW5kb3dTaXplPg0KICAgIDxXaWR0aD4xMjYxLjMzMzMzMzMzMzMzMzM8L1dpZHRoPg0KICAgIDxIZWlnaHQ+NzAwPC9IZWlnaHQ+DQogIDwvU2V0dGluZ0RpYWxvZ1dpbmRvd1NpemU+DQogIDxUZXN0UGxhbkdyaWRTY3JvbGxUb1BsYXlpbmc+ZmFsc2U8L1Rlc3RQbGFuR3JpZFNjcm9sbFRvUGxheWluZz4NCiAgPFBsdWdpbk1hbmFnZXJDb2x1bW5XaWR0aCAvPg0KICA8UHJvcGVydHlEYXRhR3JpZENvbHVtbldpZHRoIC8+DQogIDxTZWxlY3RlZENvbnRyb2xQcm92aWRlcj4NCiAgICA8S2V5VmFsdWVQYWlyT2ZTdHJpbmc+DQogICAgICA8S2V5PkR1dFNldHRpbmdzPC9LZXk+DQogICAgICA8VmFsdWU+RHV0U2V0dGluZ3NDb250cm9sUHJvdmlkZXI8L1ZhbHVlPg0KICAgIDwvS2V5VmFsdWVQYWlyT2ZTdHJpbmc+DQogICAgPEtleVZhbHVlUGFpck9mU3RyaW5nPg0KICAgICAgPEtleT5EbGxGaWxlU2V0dGluZ3M8L0tleT4NCiAgICAgIDxWYWx1ZT5EbGxTZXR0aW5nc0NvbnRyb2xQcm92aWRlcjwvVmFsdWU+DQogICAgPC9LZXlWYWx1ZVBhaXJPZlN0cmluZz4NCiAgPC9TZWxlY3RlZENvbnRyb2xQcm92aWRlcj4NCiAgPEdyaWRTcGxpdHRlclJhdGlvcyAvPg0KICA8RGlhbG9nU2l6ZT4NCiAgICA8S2V5VmFsdWVQYWlyT2ZTdHJpbmc+DQogICAgICA8S2V5PlNpZ25hbCB2YWx1ZXM8L0tleT4NCiAgICAgIDxWYWx1ZT4NCiAgICAgICAgPFdpZHRoPjQ2NC42NjY2NjY2NjY2NjY2MzwvV2lkdGg+DQogICAgICAgIDxIZWlnaHQ+MzAwPC9IZWlnaHQ+DQogICAgICA8L1ZhbHVlPg0KICAgIDwvS2V5VmFsdWVQYWlyT2ZTdHJpbmc+DQogICAgPEtleVZhbHVlUGFpck9mU3RyaW5nPg0KICAgICAgPEtleT5MaW5lczwvS2V5Pg0KICAgICAgPFZhbHVlPg0KICAgICAgICA8V2lkdGg+ODUxLjMzMzMzMzMzMzMzMzM8L1dpZHRoPg0KICAgICAgICA8SGVpZ2h0PjMwMDwvSGVpZ2h0Pg0KICAgICAgPC9WYWx1ZT4NCiAgICA8L0tleVZhbHVlUGFpck9mU3RyaW5nPg0KICA8L0RpYWxvZ1NpemU+DQogIDxEaXNhYmxlZExvZ0dyb3VwcyAvPg0KICA8RmlsdGVyQ29uZmlndXJhdGlvbkRhdGEgLz4NCiAgPE1haW5XaW5kb3dSZXBlYXRTdG9wQ291bnQ+ZmFsc2U8L01haW5XaW5kb3dSZXBlYXRTdG9wQ291bnQ+DQogIDxNYWluV2luZG93UmVwZWF0U3RvcFBlbmRpbmc+ZmFsc2U8L01haW5XaW5kb3dSZXBlYXRTdG9wUGVuZGluZz4NCiAgPE1haW5XaW5kb3dSZXBlYXRTdG9wUGFzcz5mYWxzZTwvTWFpbldpbmRvd1JlcGVhdFN0b3BQYXNzPg0KICA8TWFpbldpbmRvd1JlcGVhdFN0b3BGYWlsPmZhbHNlPC9NYWluV2luZG93UmVwZWF0U3RvcEZhaWw+DQogIDxNYWluV2luZG93UmVwZWF0U3RvcEVycm9yPnRydWU8L01haW5XaW5kb3dSZXBlYXRTdG9wRXJyb3I+DQogIDxNYWluV2luZG93UmVwZWF0U3RvcEFib3J0PmZhbHNlPC9NYWluV2luZG93UmVwZWF0U3RvcEFib3J0Pg0KICA8TWFpbldpbmRvd1JlcGVhdFN0b3BEdXJhdGlvbj5mYWxzZTwvTWFpbldpbmRvd1JlcGVhdFN0b3BEdXJhdGlvbj4NCiAgPE1haW5XaW5kb3dSZXBlYXRNYXhDb3VudD4wPC9NYWluV2luZG93UmVwZWF0TWF4Q291bnQ+DQogIDxNYWluV2luZG93UmVwZWF0TWF4RHVyYXRpb24+MDA6MDA6MDA8L01haW5XaW5kb3dSZXBlYXRNYXhEdXJhdGlvbj4NCiAgPEZpbGVQYXRoQ29udHJvbExhc3RCcm93c2VkUGF0aD5SZXN1bHRzL1RCRC0yMDI2LTEwLTI2IDIwLTU4LTA2LU5vdFNldC5jc3Y8L0ZpbGVQYXRoQ29udHJvbExhc3RCcm93c2VkUGF0aD4NCiAgPFBhY2thZ2UuRGVwZW5kZW5jaWVzPg0KICAgIDxQYWNrYWdlIE5hbWU9IldQRiBDb250cm9scyIgVmVyc2lvbj0iXjkuMzQuMCtlOWE1NTVjZiIgLz4NCiAgICA8UGFja2FnZSBOYW1lPSJPcGVuVEFQIiBWZXJzaW9uPSJeOS4zNC4wK2Y0OThkM2I2IiAvPg0KICAgIDxQYWNrYWdlIE5hbWU9IkVkaXRvciIgVmVyc2lvbj0iXjkuMzQuMCtlOWE1NTVjZiIgLz4NCiAgPC9QYWNrYWdlLkRlcGVuZGVuY2llcz4NCjwvR3VpQ29udHJvbHNTZXR0aW5ncz4=</Base64>
+      </SettingString>
+    </GuiControlsSettings>
+    <PanelSettings>
+      <SettingString>
+        <Base64>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxQYW5lbFNldHRpbmdzIHR5cGU9IktleXNpZ2h0Lk9wZW5UYXAuR3VpLlBhbmVsU2V0dGluZ3MiPg0KICA8TGF5b3V0Pg0KICAgIDxCYXNlNjQ+UEVSdlkydE1ZWGx2ZFhRK0RRb2dJRHhOWVdsdVZISmxaVDROQ2lBZ0lDQThVM0JzYVhRZ1QzSnBaVzUwWVhScGIyNDlJbFpsY25ScFkyRnNJaUJTWVhScGJ6MGlNQzQzTURZaVBnMEtJQ0FnSUNBZ1BGTndiR2wwSUU5eWFXVnVkR0YwYVc5dVBTSkliM0pwZW05dWRHRnNJaUJTWVhScGJ6MGlNQzQzTXlJK0RRb2dJQ0FnSUNBZ0lEeFVZV0pIY205MWNDQlRaV3hsWTNSbFpFbHVaR1Y0UFNJeElqNE5DaUFnSUNBZ0lDQWdJQ0E4U1hSbGJTQkpaRDBpUzJWNWMybG5hSFF1VDNCbGJsUmhjQzVIZFdrdVYyVnNZMjl0WlZOamNtVmxibEJoYm1Wc0lpQlVhWFJzWlQwaVYyVnNZMjl0WlNJZ1EyRnVSRzlqYXowaWRISjFaU0lnTHo0TkNpQWdJQ0FnSUNBZ0lDQThTWFJsYlNCSlpEMGlTMlY1YzJsbmFIUXVUM0JsYmxSaGNDNUhkV2t1VkdWemRGQnNZVzVRYkhWbmFXNGlJRlJwZEd4bFBTSlVaWE4wSUZCc1lXNGlJRU5oYmtSdlkyczlJblJ5ZFdVaUlDOCtEUW9nSUNBZ0lDQWdJRHd2VkdGaVIzSnZkWEErRFFvZ0lDQWdJQ0FnSUR4VVlXSkhjbTkxY0NCVFpXeGxZM1JsWkVsdVpHVjRQU0l3SWo0TkNpQWdJQ0FnSUNBZ0lDQThTWFJsYlNCSlpEMGlTMlY1YzJsbmFIUXVUM0JsYmxSaGNDNUhkV2t1VTNSbGNGTmxkSFJwYm1kelVHeDFaMmx1SWlCVWFYUnNaVDBpVkdWemRDQlRkR1Z3SUZObGRIUnBibWR6SWlCRFlXNUViMk5yUFNKMGNuVmxJaUF2UGcwS0lDQWdJQ0FnSUNBOEwxUmhZa2R5YjNWd1BnMEtJQ0FnSUNBZ1BDOVRjR3hwZEQ0TkNpQWdJQ0FnSUR4VVlXSkhjbTkxY0NCVFpXeGxZM1JsWkVsdVpHVjRQU0l3SWo0TkNpQWdJQ0FnSUNBZ1BFbDBaVzBnU1dROUlrdGxlWE5wWjJoMExrOXdaVzVVWVhBdVIzVnBMa3h2WjFCaGJtVnNVR3gxWjJsdUlpQlVhWFJzWlQwaVRHOW5JaUJEWVc1RWIyTnJQU0owY25WbElpQXZQZzBLSUNBZ0lDQWdQQzlVWVdKSGNtOTFjRDROQ2lBZ0lDQThMMU53YkdsMFBnMEtJQ0E4TDAxaGFXNVVjbVZsUGcwS1BDOUViMk5yVEdGNWIzVjBQZz09PC9CYXNlNjQ+DQogIDwvTGF5b3V0Pg0KICA8TGF5b3V0WG1sIC8+DQogIDxWaXNpYmxlUGFuZWxzIC8+DQogIDxQYWNrYWdlLkRlcGVuZGVuY2llcz4NCiAgICA8UGFja2FnZSBOYW1lPSJXUEYgQ29udHJvbHMiIFZlcnNpb249Il45LjM0LjArZTlhNTU1Y2YiIC8+DQogICAgPFBhY2thZ2UgTmFtZT0iT3BlblRBUCIgVmVyc2lvbj0iXjkuMzQuMCtmNDk4ZDNiNiIgLz4NCiAgICA8UGFja2FnZSBOYW1lPSJFZGl0b3IiIFZlcnNpb249Il45LjM0LjArZTlhNTU1Y2YiIC8+DQogIDwvUGFja2FnZS5EZXBlbmRlbmNpZXM+DQo8L1BhbmVsU2V0dGluZ3M+</Base64>
+      </SettingString>
+    </PanelSettings>
+    <WatchVariableNames />
+    <WatchVariableDatas />
+  </PTEMTestPlanUISettingsMember>
+  <PTEMTestPlanPropertiesMember.ReloadResourcesIfSettingsInvalidated>true</PTEMTestPlanPropertiesMember.ReloadResourcesIfSettingsInvalidated>
+  <PTEMTestPlanPropertiesMember.Marker></PTEMTestPlanPropertiesMember.Marker>
+  <PTEMTestPlanPropertiesMember.PreRunCommands.Commands />
+  <PTEMTestPlanPropertiesMember.Preferences.ShowPinDetails>true</PTEMTestPlanPropertiesMember.Preferences.ShowPinDetails>
+  <PTEMTestPlanPropertiesMember.Preferences.IsProfileSavedWithTestPlan>true</PTEMTestPlanPropertiesMember.Preferences.IsProfileSavedWithTestPlan>
+  <PTEMTestPlanPropertiesMember.Preferences.ShowDllWrapperClassObject>false</PTEMTestPlanPropertiesMember.Preferences.ShowDllWrapperClassObject>
+  <PTEMTestPlanPropertiesMember.Preferences.EnableConnections>false</PTEMTestPlanPropertiesMember.Preferences.EnableConnections>
+  <PTEM_x003A_LoggingTemplateProperties.LimitCheckPassTemplate Metadata="LimitCheckPassTemplate">
+    <Base64>LS0tIExpbWl0IENoZWNrOiB7TGltaXQuTmFtZX0gLS0tIFJlc3VsdDoge0xpbWl0LlZlcmRpY3R9IC0tLQ0KU2VyaWFsIE51bWJlcjoge0xpbWl0LkR1dFNlcmlhbE51bWJlcn0NCkRVVCBSZXN1bHQ6IHtMaW1pdC5EdXRSZXN1bHR9DQpNZWFzdXJlZDoge0xpbWl0Lk1lYXN1cmVkVmFsdWV9DQpNaW5pbXVtOiB7TGltaXQuTG93ZXJ9DQpNYXhpbXVtOiB7TGltaXQuVXBwZXJ9DQpDb25kaXRpb246IHtMaW1pdC5UeXBlfQ0KLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQ==</Base64>
+  </PTEM_x003A_LoggingTemplateProperties.LimitCheckPassTemplate>
+  <PTEM_x003A_LoggingTemplateProperties.LimitCheckFailTemplate Metadata="LimitCheckFailTemplate">
+    <Base64>KioqIExpbWl0IENoZWNrOiB7TGltaXQuTmFtZX0gKioqIFJlc3VsdDoge0xpbWl0LlZlcmRpY3R9ICoqKg0KU2VyaWFsIE51bWJlcjoge0xpbWl0LkR1dFNlcmlhbE51bWJlcn0NCkRVVCBSZXN1bHQ6IHtMaW1pdC5EdXRSZXN1bHR9DQpNZWFzdXJlZDoge0xpbWl0Lk1lYXN1cmVkVmFsdWV9DQpNaW5pbXVtOiB7TGltaXQuTG93ZXJ9DQpNYXhpbXVtOiB7TGltaXQuVXBwZXJ9DQpDb25kaXRpb246IHtMaW1pdC5UeXBlfQ0KKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKg==</Base64>
+  </PTEM_x003A_LoggingTemplateProperties.LimitCheckFailTemplate>
+  <PTEM_x003A_LoggingTemplateProperties.MainTemplate Metadata="MainTemplate">
+    <Base64>KioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKg0KVGVzdCBQbGFuOiB7RklFTEQuVGVzdFBsYW5OYW1lfQ0KT3BlcmF0b3IgSWQ6IHtGSUVMRC5PcGVyYXRvcklkfQ0KVGVzdCBTdGF0aW9uOiB7RklFTEQuVGVzdFN0YXRpb25JZH0NCkRhdGU6IHtGSUVMRC5DdXJyZW50RGF0ZX0NClRpbWU6IHtGSUVMRC5DdXJyZW50VGltZX0NCioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKio=</Base64>
+  </PTEM_x003A_LoggingTemplateProperties.MainTemplate>
+  <PTEM_x003A_LoggingTemplateProperties.CleanUpTemplate Metadata="CleanUpTemplate">-------- End of Test Plan</PTEM_x003A_LoggingTemplateProperties.CleanUpTemplate>
+  <PTEM_x003A_SystemInformationProperties.ActorType>Human</PTEM_x003A_SystemInformationProperties.ActorType>
+  <PTEM_x003A_SystemInformationProperties.CustomerId />
+  <PTEM_x003A_SystemInformationProperties.SiteId />
+  <PTEM_x003A_SystemInformationProperties.TestStationId />
+  <PTEM_x003A_SystemInformationProperties.BoardName />
+  <PTEM_x003A_SystemInformationProperties.FixtureId />
+  <PTEM_x003A_SystemInformationProperties.LineNumber />
+  <PTEM_x003A_SystemInformationProperties.ProductNumber />
+  <PTEM_x003A_SystemInformationProperties.ProjectId />
+  <PTEM_x003A_SystemInformationProperties.ProjectVersion />
+  <PTEM_x003A_SystemInformationProperties.OperatorId />
+  <PTEM_x003A_SystemInformationProperties.OperatorName />
+  <PTEM_x003A_SystemInformationProperties.FirstName />
+  <PTEM_x003A_SystemInformationProperties.LastName />
+  <PTEM_x003A_SystemInformationProperties.Station />
+  <PTEM_x003A_VariantProperties.Variants />
+  <PTEM_x003A_VariantProperties.SelectedVariant Metadata="Selected Variant" />
+  <PTEM_x003A_VariableProperties.ScopeInformation>
+    <VariableFilePaths />
+    <InternalVariables>
+      <Variable>
+        <ResetBetweenRuns>true</ResetBetweenRuns>
+        <Name>DUT_IN</Name>
+        <DefaultValue type="System.String">OFF</DefaultValue>
+        <DataType>System.String</DataType>
+        <Description />
+        <Unit></Unit>
+        <IsReadOnly>false</IsReadOnly>
+        <IsShared>false</IsShared>
+        <IsTemp>false</IsTemp>
+      </Variable>
+      <Variable>
+        <ResetBetweenRuns>true</ResetBetweenRuns>
+        <Name>BOARD_PRESENT</Name>
+        <DefaultValue type="System.String">ON</DefaultValue>
+        <DataType>System.String</DataType>
+        <Description />
+        <Unit></Unit>
+        <IsReadOnly>false</IsReadOnly>
+        <IsShared>false</IsShared>
+        <IsTemp>false</IsTemp>
+      </Variable>
+    </InternalVariables>
+    <SelectedVariantName />
+    <OnDeserializedMarker></OnDeserializedMarker>
+  </PTEM_x003A_VariableProperties.ScopeInformation>
+  <PTEM_x003A_VariableProperties.FilterDataLogVariables>false</PTEM_x003A_VariableProperties.FilterDataLogVariables>
+  <PTEM_x003A_VariableProperties.DataLogVariables />
+  <PTEM_x003A_DLLProperties.DLLAvailableFunctions />
+  <PTEM_x003A_DLLProperties.DLLChosenGlobalFunctions />
+  <PTEM_x003A_DLLProperties.DLLClassObjects />
+  <Ptem.MultiDutMixin.IsEnabled Metadata="MultiDutEnabled">false</Ptem.MultiDutMixin.IsEnabled>
+  <Ptem.MultiDutMixin.SelectedMode Metadata="MultiDutMode">Sequential</Ptem.MultiDutMixin.SelectedMode>
+  <Ptem.MultiDutMixin.ValueConfigurations />
+  <Ptem.MultiDutMixin.SelectedValueConfiguration />
+  <Ptem.MultiDutMixin.SerializedMappings />
+  <Ptem.MultiDutMixin.DeserializeMember></Ptem.MultiDutMixin.DeserializeMember>
+  <Package.Dependencies>
+    <Package Name="OpenTAP" Version="^9.34.0+f498d3b6" />
+    <Package Name="PTEM Test Steps" Version="^1.1.0+8043e6d9" />
+    <Package Name="PTEM Variables" Version="^1.2.0+e0840f25" />
+    <Package Name="PTEM Serial Port" Version="^1.1.0+e91eb4dd" />
+    <Package Name="PTEM" Version="^2.1.2+5049665f" />
+    <Package Name="PTEM Switch Manager Base" Version="^1.3.0+fd06f609" />
+    <Package Name="PTEM Editor UI" Version="^2.1.2+5049665f" />
+    <Package Name="PTEM DLL Conversion" Version="^1.0.5+c62b2e1c" />
+  </Package.Dependencies>
+  <PTEM.SavedDuts />
+  <PTEM.SavedInstruments>
+    <SerialPortInst type="ptemsaveid:Keysight.OpenTap.Plugins.Extensions.Instruments.SerialPortInst" Source="">
+      <PortName>COM9</PortName>
+      <BaudRate>115200</BaudRate>
+      <EnumParity>None</EnumParity>
+      <EnumStopBits>One</EnumStopBits>
+      <DataBit>8</DataBit>
+      <ReadTimeOut>500</ReadTimeOut>
+      <WriteTimeOut>500</WriteTimeOut>
+      <EnumHandShake>None</EnumHandShake>
+      <NewLine />
+      <Name>Serial Port</Name>
+      <PTEM.SaveId>b36365e2-65d7-42a8-adeb-11538ca3f11c</PTEM.SaveId>
+    </SerialPortInst>
+  </PTEM.SavedInstruments>
+  <PTEM.SavedConnections />
+  <PTEM.SavedResultListeners />
+  <PtemSwitchManager.SwitchManagerAliasSettings>
+    <DeviceAliases />
+  </PtemSwitchManager.SwitchManagerAliasSettings>
+  <Dll.DllDependencyFolders />
+  <Dll.SavedFiles />
+  <Dll.SavedFunctions />
+  <PtemSwitchManager.SwitchManagerCanvasGraphSettings>
+    <Resources />
+    <Links />
+  </PtemSwitchManager.SwitchManagerCanvasGraphSettings>
+  <AutoCAN.SavedDbcFileSettings />
+  <AutoCAN.SavedLdfFileSettings />
+</TestPlan>
