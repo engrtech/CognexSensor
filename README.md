@@ -59,7 +59,7 @@ Standalone build from the project folder:
 .\review\build.ps1
 ```
 
-Outputs: `review/build/CognexMCU.elf`, `.bin`, `.map`. The build script detects an ARM toolchain on PATH and accepts `-ToolBin` for another location. It runs on Windows or Linux with PowerShell. Building does not flash a device. GitHub Actions builds each push and provides an ELF/BIN/MAP artifact tied to that commit.
+Outputs: `review/build/CognexMCU.elf`, `.bin`, `.hex`, `.map`. The Intel HEX file includes flash addresses and can be opened directly in STM32CubeProgrammer. The build script detects an ARM toolchain on PATH and accepts `-ToolBin` for another location. It runs on Windows or Linux with PowerShell. Building does not flash a device. GitHub Actions builds each push and provides an ELF/BIN/HEX/MAP artifact tied to that commit.
 
 This project was originally copied from `C:\STM32Projects\CB_02`. The USB CDC stack and clock configuration come from the separate `C:\STM32Projects\CMMTester` reference. Neither source project was modified. On the original PC, legacy CB_02 sources remain under `reference/CB_02/Core`. That local archive, old fixtures, and old review records are excluded from the shared repository. The shared project contains the active sensor application and its current build outputs.
 

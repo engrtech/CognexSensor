@@ -109,6 +109,11 @@
       "sha256": "0a7b2dfa27f15400e95628d32c1b9d2ea8649ad833a2d9c6f41cf1eb57aeba67"
     },
     {
+      "path": "review\\build\\CognexMCU.hex",
+      "bytes": 84695,
+      "sha256": "ba4c3d5d5a207ed978e76e2417ad1cbab68d4e583e689d86b0e7cd91c09def47"
+    },
+    {
       "path": "review\\build\\CognexMCU.map",
       "bytes": 435001,
       "sha256": "4c6276f27a83a9acf3bafd4d848d67ba8c894afeeeda438a2f6cd784da8d9e8a"

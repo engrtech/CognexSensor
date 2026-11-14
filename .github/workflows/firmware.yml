@@ -35,6 +35,7 @@ jobs:
           path: |
             review/build/CognexMCU.elf
             review/build/CognexMCU.bin
+            review/build/CognexMCU.hex
             review/build/CognexMCU.map
             CognexMCU_Sensor_Verification.json
           if-no-files-found: error

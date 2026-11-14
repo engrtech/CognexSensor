@@ -77,7 +77,7 @@ for folder in ['Core', 'USB_DEVICE']:
             sources.append({'path': str(path.relative_to(root)),
                             'sha256': hashlib.sha256(path.read_bytes()).hexdigest()})
 outputs = []
-for extension in ['elf', 'bin', 'map']:
+for extension in ['elf', 'bin', 'hex', 'map']:
     path = root / f'review/build/CognexMCU.{extension}'
     outputs.append({'path': str(path.relative_to(root)), 'bytes': path.stat().st_size,
                     'sha256': hashlib.sha256(path.read_bytes()).hexdigest()})

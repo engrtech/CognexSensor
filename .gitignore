@@ -26,6 +26,7 @@ node_modules/
 /review/build/*
 !/review/build/CognexMCU.elf
 !/review/build/CognexMCU.bin
+!/review/build/CognexMCU.hex
 !/review/build/CognexMCU.map
 
 /tests/test_sensor_serial

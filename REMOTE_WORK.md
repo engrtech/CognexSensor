@@ -36,7 +36,7 @@ Adjust the paths passed to `git add` for the files you changed. GitHub sign-in i
 
 Each push and pull request runs the **Firmware build** workflow. You can also start it from **Actions → Firmware build → Run workflow**.
 
-Open a successful run and download its **CognexMCU-firmware** artifact. It contains the ELF, BIN, MAP, and verification report built from that run's commit. No toolchain is needed on the work laptop to download these files.
+Open a successful run and download its **CognexMCU-firmware** artifact. It contains the ELF, BIN, HEX, MAP, and verification report built from that run's commit. No toolchain is needed on the work laptop to download these files.
 
 The files committed under `review/build` are a known build snapshot. For newer source edits, use the artifact from the matching successful workflow run or rebuild locally. A GitHub edit alone does not update the committed ELF.
 

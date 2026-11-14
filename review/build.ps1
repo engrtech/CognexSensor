@@ -32,5 +32,7 @@ try {
     if ($LASTEXITCODE -ne 0) { throw 'Link failed' }
     & $objcopy -O binary review/build/CognexMCU.elf review/build/CognexMCU.bin
     if ($LASTEXITCODE -ne 0) { throw 'Binary export failed' }
+    & $objcopy -O ihex review/build/CognexMCU.elf review/build/CognexMCU.hex
+    if ($LASTEXITCODE -ne 0) { throw 'Intel HEX export failed' }
     & $size review/build/CognexMCU.elf
 } finally { Pop-Location }
