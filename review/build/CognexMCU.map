@@ -5842,10 +5842,10 @@ LOAD C:/ST/STM32CubeIDE_2.0.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.exte
 
 .debug_str      0x00000000    0xb96ce
  .debug_str     0x00000000    0xb96ce review/build/main.o
-                              0xb5cbc (size before relaxing)
- .debug_str     0x000b96ce    0xb5f6b review/build/sensor_serial.o
- .debug_str     0x000b96ce    0xb172d review/build/stm32f4xx_hal_msp.o
- .debug_str     0x000b96ce    0xb1ae6 review/build/stm32f4xx_it.o
+                              0xb5cbe (size before relaxing)
+ .debug_str     0x000b96ce    0xb5f6d review/build/sensor_serial.o
+ .debug_str     0x000b96ce    0xb172f review/build/stm32f4xx_hal_msp.o
+ .debug_str     0x000b96ce    0xb1ae8 review/build/stm32f4xx_it.o
  .debug_str     0x000b96ce    0xb1752 review/build/system_stm32f4xx.o
  .debug_str     0x000b96ce    0xb2031 review/build/stm32f4xx_hal_cortex.o
  .debug_str     0x000b96ce    0xb18cd review/build/stm32f4xx_hal_gpio.o
@@ -5854,14 +5854,14 @@ LOAD C:/ST/STM32CubeIDE_2.0.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_str     0x000b96ce    0xb1b86 review/build/stm32f4xx_hal_rcc.o
  .debug_str     0x000b96ce    0xb22b5 review/build/stm32f4xx_hal.o
  .debug_str     0x000b96ce    0xb210b review/build/stm32f4xx_ll_usb.o
- .debug_str     0x000b96ce    0xb61ef review/build/usb_device.o
- .debug_str     0x000b96ce    0xb62af review/build/usbd_cdc_if.o
- .debug_str     0x000b96ce    0xb5d2f review/build/usbd_desc.o
- .debug_str     0x000b96ce    0xb7010 review/build/usbd_conf.o
- .debug_str     0x000b96ce    0xb613c review/build/usbd_core.o
- .debug_str     0x000b96ce    0xb5f67 review/build/usbd_ctlreq.o
- .debug_str     0x000b96ce    0xb5e3c review/build/usbd_ioreq.o
- .debug_str     0x000b96ce    0xb67dc review/build/usbd_cdc.o
+ .debug_str     0x000b96ce    0xb61f1 review/build/usb_device.o
+ .debug_str     0x000b96ce    0xb62b1 review/build/usbd_cdc_if.o
+ .debug_str     0x000b96ce    0xb5d31 review/build/usbd_desc.o
+ .debug_str     0x000b96ce    0xb7012 review/build/usbd_conf.o
+ .debug_str     0x000b96ce    0xb613e review/build/usbd_core.o
+ .debug_str     0x000b96ce    0xb5f69 review/build/usbd_ctlreq.o
+ .debug_str     0x000b96ce    0xb5e3e review/build/usbd_ioreq.o
+ .debug_str     0x000b96ce    0xb67de review/build/usbd_cdc.o
  .debug_str     0x000b96ce       0x5c review/build/startup.o
 
 .comment        0x00000000       0x43

@@ -2,7 +2,7 @@
   "project_setup_date": "2026-11-14",
   "project": "C:\\STM32Projects\\CognexMCU",
   "behavior": "Polled ON/OFF on state change; WARNING LED21 follows input; SENS? returns current ON/OFF; no startup output",
-  "input": "FuSa1 J20 pin 1, PA9, active HIGH, 0-3.3 V; J20 pin 3 ground",
+  "input": "FuSa1 J20 pin 1, PA9, active LOW (0 V = present; 3.3 V = absent), 0-3.3 V; J20 pin 3 ground",
   "usb": "Native USB CDC on PA11/PA12; 8 MHz HSE and 48 MHz USB clock",
   "arm_compile_and_link": "passed",
   "sensor_sampling": "Nonblocking main-loop polling; no sensor EXTI enabled",
@@ -18,7 +18,7 @@
   "source_files": [
     {
       "path": "Core\\Inc\\main.h",
-      "sha256": "1bdc1bf4724696f8332f61df1e417c483150e6139cc67c7cfc40d8afad344d7e"
+      "sha256": "7e1b1852c4c95fa4b4844276eeb2b6bb24bd157275cc9325d63b2f81684a792b"
     },
     {
       "path": "Core\\Inc\\sensor_serial.h",
@@ -101,22 +101,22 @@
     {
       "path": "review\\build\\CognexMCU.elf",
       "bytes": 1102100,
-      "sha256": "453ec7d7d288dfd18d97d9020ebb078a73f1c97c73daa34a8d89c7852274111a"
+      "sha256": "bb348fcd3c664b7280604d1c95d710ffe053dd73289957ce37228b4a4829f221"
     },
     {
       "path": "review\\build\\CognexMCU.bin",
       "bytes": 30076,
-      "sha256": "0a7b2dfa27f15400e95628d32c1b9d2ea8649ad833a2d9c6f41cf1eb57aeba67"
+      "sha256": "91816c17a1f4230f842e61d6f473f4465c02484edab77dc593da83e528c7df65"
     },
     {
       "path": "review\\build\\CognexMCU.hex",
       "bytes": 84695,
-      "sha256": "ba4c3d5d5a207ed978e76e2417ad1cbab68d4e583e689d86b0e7cd91c09def47"
+      "sha256": "b7016ee5d4e1ce3e531207650479c9a3fd9c64d731f052890e43578f139b5f68"
     },
     {
       "path": "review\\build\\CognexMCU.map",
       "bytes": 435001,
-      "sha256": "4c6276f27a83a9acf3bafd4d848d67ba8c894afeeeda438a2f6cd784da8d9e8a"
+      "sha256": "df9c9f3c4ec6b13e08f1bfcde098cda222d75f192281bd8bf6a3161e2e427341"
     }
   ]
 }

@@ -57,7 +57,8 @@ assert ioc['RCC.HSE_VALUE'] == '8000000'
 assert not any(value.startswith('CAN') for value in ioc.values())
 main_header = (root / 'Core/Inc/main.h').read_text()
 assert '#define SENSOR_IN_Pin GPIO_PIN_9' in main_header
-assert '#define SENSOR_ACTIVE_STATE GPIO_PIN_SET' in main_header
+assert '#define SENSOR_ACTIVE_STATE GPIO_PIN_RESET' in main_header
+assert '#define SENSOR_ACTIVE_STATE GPIO_PIN_RESET' in (root / 'tests/stubs/main.h').read_text()
 assert '#define WARNING_LED_Pin GPIO_PIN_5' in main_header
 assert '#define WARNING_LED_GPIO_Port GPIOC' in main_header
 main_source = (root / 'Core/Src/main.c').read_text()
@@ -85,7 +86,7 @@ report = {
     'project_setup_date': '2026-11-14',
     'project': str(root),
     'behavior': 'Polled ON/OFF on state change; WARNING LED21 follows input; SENS? returns current ON/OFF; no startup output',
-    'input': 'FuSa1 J20 pin 1, PA9, active HIGH, 0-3.3 V; J20 pin 3 ground',
+    'input': 'FuSa1 J20 pin 1, PA9, active LOW (0 V = present; 3.3 V = absent), 0-3.3 V; J20 pin 3 ground',
     'usb': 'Native USB CDC on PA11/PA12; 8 MHz HSE and 48 MHz USB clock',
     'arm_compile_and_link': 'passed',
     'sensor_sampling': 'Nonblocking main-loop polling; no sensor EXTI enabled',

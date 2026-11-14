@@ -63,7 +63,8 @@ void Error_Handler(void);
 #define WARNING_LED_GPIO_Port GPIOC
 
 /* USER CODE BEGIN Private defines */
-#define SENSOR_ACTIVE_STATE GPIO_PIN_SET
+/* Active LOW: 0 V = board present; 3.3 V = no board. */
+#define SENSOR_ACTIVE_STATE GPIO_PIN_RESET
 
 /* USER CODE END Private defines */
 

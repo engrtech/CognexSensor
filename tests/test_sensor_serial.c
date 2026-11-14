@@ -82,17 +82,17 @@ static void session(GPIO_PinState state, uint8_t connected)
 
 int main(void)
 {
-  session(GPIO_PIN_RESET, 1U);
+  session(GPIO_PIN_SET, 1U);
   assert(led_level == GPIO_PIN_RESET);
   for (unsigned i = 0; i < 100U; i++) { process(); }
   assert(line_count == 0U);
-  input_level = GPIO_PIN_SET;
+  input_level = GPIO_PIN_RESET;
   process();
   assert(led_level == GPIO_PIN_SET && line_count == 1U);
   assert(strcmp(lines[0], "ON\r\n") == 0);
   for (unsigned i = 0; i < 100U; i++) { process(); }
   assert(line_count == 1U);
-  input_level = GPIO_PIN_RESET;
+  input_level = GPIO_PIN_SET;
   process();
   assert(led_level == GPIO_PIN_RESET && line_count == 1U);
   complete();
@@ -100,7 +100,7 @@ int main(void)
   complete();
   assert(line_count == 2U);
 
-  session(GPIO_PIN_SET, 1U);
+  session(GPIO_PIN_RESET, 1U);
   assert(led_level == GPIO_PIN_SET && line_count == 0U);
   receive("sen");
   assert(line_count == 0U);
@@ -116,12 +116,12 @@ int main(void)
   assert(line_count == 3U && strcmp(lines[2], "ON\r\n") == 0);
   complete();
 
-  session(GPIO_PIN_RESET, 1U);
+  session(GPIO_PIN_SET, 1U);
   blocked = 1U;
-  input_level = GPIO_PIN_SET;
+  input_level = GPIO_PIN_RESET;
   process();
   assert(led_level == GPIO_PIN_SET && line_count == 0U);
-  input_level = GPIO_PIN_RESET;
+  input_level = GPIO_PIN_SET;
   process();
   assert(led_level == GPIO_PIN_RESET && line_count == 0U);
   blocked = 0U;
@@ -131,11 +131,11 @@ int main(void)
   assert(line_count == 2U && strcmp(lines[1], "OFF\r\n") == 0);
   complete();
 
-  session(GPIO_PIN_RESET, 0U);
-  input_level = GPIO_PIN_SET;
+  session(GPIO_PIN_SET, 0U);
+  input_level = GPIO_PIN_RESET;
   process();
   assert(led_level == GPIO_PIN_SET && line_count == 0U);
-  input_level = GPIO_PIN_RESET;
+  input_level = GPIO_PIN_SET;
   process();
   assert(led_level == GPIO_PIN_RESET && line_count == 0U);
   SensorSerial_USBConnectionFromISR(1U);
@@ -145,14 +145,14 @@ int main(void)
   assert(line_count == 1U && strcmp(lines[0], "OFF\r\n") == 0);
   complete();
 
-  session(GPIO_PIN_RESET, 1U);
+  session(GPIO_PIN_SET, 1U);
   for (unsigned i = 0; i < 128U; i++) {
-    input_level = (i % 2U == 0U) ? GPIO_PIN_SET : GPIO_PIN_RESET;
+    input_level = (i % 2U == 0U) ? GPIO_PIN_RESET : GPIO_PIN_SET;
     process();
     assert(line_count == i + 1U);
     assert(strcmp(lines[i], (i % 2U == 0U) ? "ON\r\n" : "OFF\r\n") == 0);
     complete();
   }
-  puts("PASS: startup silence, change-only ON/OFF, warning LED, queries, USB buffering, disconnect, and queue wraparound.");
+  puts("PASS: active-LOW input, active-HIGH warning LED, startup silence, change-only ON/OFF, queries, USB buffering, disconnect, and queue wraparound.");
   return 0;
 }

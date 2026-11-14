@@ -2,7 +2,7 @@
 
 This is STM32F405 firmware for a FuSa1 carrier, imported as the STM32CubeIDE project **CognexMCU**.
 
-- Poll PA9 through carrier J20 pin 1; HIGH means board present. J20 pin 3 is ground. The external input interface must supply 0–3.3 V.
+- Poll PA9 through carrier J20 pin 1; LOW means board present (ON); HIGH means no board (OFF). J20 pin 3 is ground. The external input interface must supply 0–3.3 V.
 - Orange WARNING LED21 is PC5, active HIGH, and follows the sensor even without a USB connection.
 - USB CDC uses PA11/PA12. Emit `ON\r\n` or `OFF\r\n` only when the sampled state changes. No unsolicited startup/reconnect line.
 - `SENS?` followed by CR/LF or LF is the only command; reply with the current ON/OFF line. Do not add counters, other commands, CAN, PWM, or relay behavior unless requested.
