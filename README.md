@@ -23,8 +23,6 @@ Up to 63 state/query lines can wait behind a USB transfer. A prolonged host stal
 
 ## Carrier connection
 
-See the [proposed low-current divider schematic](hardware/README.md) for the 75k upper resistor / existing carrier R31 arrangement.
-
 Reference: `C:\Users\vvala\Documents\KiCad\9.0\projects\FuSa1`.
 
 Use the carrier's **J20 ESC header**, which accepts ordinary Dupont jumper leads:
